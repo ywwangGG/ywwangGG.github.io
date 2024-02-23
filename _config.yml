@@ -1,5 +1,5 @@
 title: 非洲第一白的技术小屋
-description: "Satellite - jekyll blog theme"
+description: "一学一个大跟头"
 logo_img: "/assets/img/favicon.webp"
 profile_img: "/assets/img/profile.webp"
 
@@ -19,15 +19,23 @@ giscus_categoryId:
 goatcounter_code:
 google_analytics:
 
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+#                                                 #
+#   Not recommended to touch the materials below  #
+#                                                 #
+#    Any changes may contribute to malfunction    #
+#                                                 #
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+
 # Build settings
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-loading-lazy
+
+# If you want to deploy Git Page, but choosing the second Installation method (described in README.md)
+# rather than fork, then replace the below line with `remote_theme: byanko55/jekyll-theme-satellite`.
+# Otherwise, DO NOT change it.
+theme: jekyll-theme-satellite
 
 exclude:
-  - docs/
+  - _posts
 
 collections:
   pages:
@@ -43,7 +51,7 @@ defaults:
       layout: "page"
       date: "1900-01-01"
 
-# Markdown newline activator 
+# Markdown newline activator
 kramdown:
   input: GFM
   hard_wrap: true
