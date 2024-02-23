@@ -1,0 +1,30 @@
+name: Jekyll site CI
+
+on:
+  push:
+    branches:
+      - main  # 确保这里是你用于发布的分支名
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.3.0  # 根据你的项目需求选择 Ruby 版本
+
+    - name: Install dependencies
+      run: bundle install
+
+    - name: Build with Jekyll
+      run: bundle exec jekyll build
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site
